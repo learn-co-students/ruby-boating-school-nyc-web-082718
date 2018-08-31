@@ -12,7 +12,7 @@ class Student
     BoatingTest.new(self, test_name, status, instructor)
   end
 
-  def find_student(name)
+  def self.find_student(name)
     @@all.find do |student|
       student.first_name == name
     end

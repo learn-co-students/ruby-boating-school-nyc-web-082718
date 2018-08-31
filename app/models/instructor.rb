@@ -8,21 +8,21 @@ class Instructor
     @@all << self
   end
 
-  def pass_student(student, test_name)
-    find_test(test_name).status = "passed"
+  def self.pass_student(student, test_name)
+    find_test(student, test_name).status = "passed"
   end
 
-  def fail_student(student, test_name)
-    find_test(test_name).status = "failed"
+  def self.fail_student(student, test_name)
+    find_test(student, test_name).status = "failed"
   end
 
-  def find_test(test_name)
+  def self.find_test(student, test_name)
     BoatingTest.all.find do |boating_test|
-      boating_test.test_name == test_name
+      boating_test.test_name == test_name && boating_test.student.first_name = student
     end
   end
 
-  def student_grade_percentage(student)
+  def self.student_grade_percentage(student)
     student_tests = BoatingTest.all.select do |boating_test|
       boating_test.student == student
     end
