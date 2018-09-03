@@ -22,7 +22,7 @@ Associations:
 'Instructor' class:
 * init with name
 * return all instructors
-* Instructor.pass_student should take in a student name and test name and return status failed
+* Instructor.pass_student should take in a student name and test name and return status passed
 * Instructor.fail_student should take in a student name and test name and return status failed
 * Instructor.student_grade_percentage should take in a student first name and output the percentage of tests that they have passed
 
@@ -32,7 +32,7 @@ Run ruby tools/console.rb in console to seed
 Here is some example seed data:
 
 spongebob= Student.new("Spongebob")
- patrick= Student.new("Patrick")
+patrick= Student.new("Patrick")
 
 puff= Instructor.new("Ms.Puff")
 krabs= Instructor.new("Mr.Krabs")
